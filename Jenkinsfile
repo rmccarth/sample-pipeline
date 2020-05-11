@@ -20,6 +20,7 @@ pipeline {
             steps {
                 sh ('''
                     python3 helloworld/manage.py runserver &
+                    sleep 120
                 ''')
             }
         }
