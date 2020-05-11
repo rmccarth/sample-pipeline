@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'pip install django'
-                sh 'python3 -c 'print "insert test here"'
+                sh 'python3 -c 'print("insert test here")'
             }
         }
         stage('Build') {
