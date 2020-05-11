@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'sudo apt-get install python-pip'
                 sh 'pip install django'
             }
         }
