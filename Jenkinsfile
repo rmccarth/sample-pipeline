@@ -19,7 +19,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh ('''
-                    python3 helloworld/manage.py runserver
+                    python3 helloworld/manage.py runserver &
                 ''')
             }
         }
