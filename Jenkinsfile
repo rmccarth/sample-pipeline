@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'sudo apt-get install python3-pip -y'
                 sh 'pip3 install django'
+                sh 'pip3 install gunicorn'
             }
         }
         stage('Build') {
@@ -19,8 +20,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh ('''
-                    python3 helloworld/manage.py runserver 0.0.0.0:8000 &
-                    sleep 120
+                    gunicorn gunicorn /home/ubuntu/workspace/test-pipeline/helloworld/helloworld_project.wsgi
                 ''')
             }
         }
