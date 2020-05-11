@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh('''
                     pip3 install --user --upgrade setuptools wheel
-                    python3 setup.py sdist bdist_wheel
+                    python3 helloworld/setup.py sdist bdist_wheel
 
             ''')
             }
@@ -19,7 +19,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh ('''
-                    python3 manage.py runserver
+                    python3 helloworld/manage.py runserver
                 ''')
             }
         }
