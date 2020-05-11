@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'sudo apt-get install python-pip -y'
-                sh 'pip install django'
+                sh 'sudo apt-get install python3-pip -y'
+                sh 'pip3 install django'
             }
         }
         stage('Build') {
             steps {
                 sh('''
-                    pip install --user --upgrade setuptools wheel
+                    pip3 install --user --upgrade setuptools wheel
                     python3 setup.py sdist bdist_wheel
 
             ''')
