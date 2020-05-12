@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh('''
-                    sudo apt-get install python3-pip -y
+                    apt-get install python3-pip -y
                     pip3 install django
                     sudo apt-get install gunicorn3 -y
                     sudo apt-get install daemonize -y
