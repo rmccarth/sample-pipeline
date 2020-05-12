@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh ('''
                     cd /home/ubuntu/workspace/test-pipeline/helloworld
-                    BUILD_ID=dontKillme bash -c "daemonize /usr/bin/gunicorn3 -b 0.0.0.0:8000 helloworld_project.wsgi --daemon"
+                    BUILD_ID=dontKillme /usr/bin/gunicorn3 -b 0.0.0.0:8000 helloworld_project.wsgi
                 ''')
             }
         }
