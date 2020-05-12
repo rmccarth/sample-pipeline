@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh ('''
                     cd /home/ubuntu/workspace/test-pipeline/helloworld
-                    gunicorn3 - 0.0.0.0:8000 helloworld_project.wsgi
+                    gunicorn3 -b 0.0.0.0:8000 helloworld_project.wsgi
                 ''')
             }
         }
