@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'sudo apt-get install python3-pip -y'
                 sh 'pip3 install django'
-                sh 'pip3 install gunicorn'
+                sh 'sudo apt-get install gunicorn3'
             }
         }
         stage('Build') {
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh ('''
                     cd /home/ubuntu/workspace/test-pipeline/helloworld
-                    gunicorn helloworld_project.wsgi
+                    gunicorn3 helloworld_project.wsgi
                 ''')
             }
         }
