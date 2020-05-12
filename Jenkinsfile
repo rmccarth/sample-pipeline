@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'sudo apt-get install python3-pip -y'
                 sh 'pip3 install django'
-                sh 'sudo apt-get install gunicorn3'
+                sh 'sudo apt-get install gunicorn3 -y'
             }
         }
         stage('Build') {
