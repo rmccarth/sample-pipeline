@@ -20,7 +20,8 @@ pipeline {
         stage('Run') {
             steps {
                 sh ('''
-                    gunicorn /home/ubuntu/workspace/test-pipeline/helloworld/helloworld_project.wsgi
+                    cd /home/ubuntu/workspace/test-pipeline/helloworld
+                    gunicorn helloworld_project.wsgi
                 ''')
             }
         }
